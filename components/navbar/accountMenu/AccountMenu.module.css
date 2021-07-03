@@ -1,0 +1,106 @@
+/*******************************
+ACCOUNT MENU STYLES
+********************************/
+
+.accMenu__container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 2rem;
+  background-color: rgb(17, 17, 17);
+  width: 16rem;
+  color: rgba(255, 255, 255, 0.68);
+  border-radius: 5px;
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  font-weight: 200;
+  font-size: 1rem;
+  transition: all 1000ms ease-out 1000ms;
+}
+
+.accMenu__container:hover {
+  height: auto;
+}
+
+.accMenu__profile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -5px;
+  margin-right: -1px;
+}
+
+.accMenu__profile > .accMenu_profileName {
+  flex-grow: 1;
+}
+
+.accMenu__profile {
+  margin-left: 1rem;
+  font-weight: thin;
+}
+
+.accMenu__profile:hover {
+  cursor: pointer;
+}
+
+.accMenu__profileName {
+  color: rgba(255, 255, 255, 0.904);
+  text-align: end;
+  margin-right: 1rem;
+}
+
+.accMenu__profileImg {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.accMenu__userProfilesContainer {
+  display: flex;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.accMenu__userProfilesContainer:hover .accMenu__userProfilesName {
+  color: white;
+}
+
+.accMenu__userProfilesImg {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.accMenu__userProfilesName {
+  color: rgba(173, 173, 173, 0.904);
+  margin-left: 1rem;
+}
+
+.accMenu__separator {
+  height: 0.1px;
+  margin-top: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.accMenu__linkContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accMenu__linkContainer:hover {
+  color: white;
+}
+
+.accMenu__link {
+  display: block;
+  flex-grow: 1;
+  height: 3rem;
+  transition: color 200ms ease-in-out;
+}
