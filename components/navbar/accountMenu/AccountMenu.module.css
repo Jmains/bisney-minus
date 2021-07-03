@@ -18,6 +18,7 @@ ACCOUNT MENU STYLES
   font-size: 1rem;
   max-height: 4.5rem;
   transition: max-height 400ms ease-in-out;
+  z-index: 9999;
 }
 
 .accMenu__container:hover,
