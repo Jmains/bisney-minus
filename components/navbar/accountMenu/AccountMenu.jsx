@@ -17,6 +17,7 @@ export default function AccountMenu({ setShowAccountMenu }) {
       </div>
 
       <div className={s.accMenu__separator}></div>
+
       {profiles.map((profile, i) => {
         return (
           <div key={i} className={s.accMenu__userProfilesContainer}>
@@ -28,7 +29,7 @@ export default function AccountMenu({ setShowAccountMenu }) {
 
       {options.map((opt, i) => {
         return (
-          <div key={i} className={s.accMenu__linkContainer}>
+          <div key={i} className={s.accMenu__linksContainer}>
             <a className={s.accMenu__link} href={opt.to}>
               {opt.name}
             </a>
