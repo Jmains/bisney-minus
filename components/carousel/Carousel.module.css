@@ -1,0 +1,101 @@
+.slider__container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 400px;
+  width: 100%;
+  margin: 2rem 0;
+  /* overflow: hidden; */
+}
+
+.slider__btn {
+  position: absolute;
+  border: none;
+  width: calc(3.5vw + 24px);
+  opacity: 0;
+  background: transparent;
+  height: 100%;
+  color: white;
+}
+
+.slider__btn:hover,
+.slider__btn:focus {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.slider__btnLeft {
+  top: 0;
+  left: 100%;
+}
+
+.slider__btnRight {
+  top: 0;
+  right: 100%;
+}
+
+.slider__trackContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.slider__track {
+  margin: 0;
+  padding: 0;
+}
+
+/* .slider__slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+} */
+
+.slider__img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  /* display: none; */
+}
+
+.slider__img:hover {
+  cursor: pointer;
+}
+
+.slider__img:hover,
+.slider__img:focus {
+}
+
+.slider__img:hover {
+  /* border-radius: 4px;
+  border: 4px solid rgba(255, 255, 255, 0);
+  transition: border 150ms linear 0s; */
+}
+
+.slider__nav {
+  position: absolute;
+  display: flex;
+  bottom: 0.75rem;
+  right: 2.5rem;
+}
+
+.slider__indicator {
+  border-radius: 50%;
+  height: 0.65rem;
+  width: 0.65rem;
+  border: none;
+  margin-left: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.slider__indicator.currentSlide {
+  background: rgba(255, 255, 255, 1);
+}
+
+.slider__indicator:hover {
+  cursor: pointer;
+}
