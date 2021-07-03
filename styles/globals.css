@@ -9,6 +9,10 @@ body {
   list-style: none;
 }
 
+ul {
+  list-style: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -21,4 +25,8 @@ a {
 :root {
   --pri: #f9f9f9;
   --bg: #1e222e;
+}
+
+.layout {
+  padding: 0 calc(3.5vw + 24px);
 }
