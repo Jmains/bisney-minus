@@ -7,7 +7,14 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <Carousel />
+      <div className="layout">
+        <section id="slider">
+          <Carousel />
+        </section>
+        <section id="recommended"></section>
+        <section id="new"></section>
+        <section id="continueWatching"></section>
+      </div>
     </div>
   );
 }

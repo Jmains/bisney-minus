@@ -1,0 +1,104 @@
+.slider__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 200px;
+  width: 100%;
+  max-height: 400px;
+  margin: 2rem auto;
+  aspect-ratio: 21 / 9;
+}
+
+.slider__btn {
+  position: absolute;
+  border: none;
+  width: calc(3.5vw + 24px);
+  opacity: 0;
+  background: transparent;
+  height: 100%;
+  color: white;
+  transition: opacity 200ms ease-in;
+}
+
+.slider__btn:hover,
+.slider__btn:focus {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.slider__btnLeft {
+  top: 0;
+  right: 100%;
+}
+
+.slider__btnRight {
+  top: 0;
+  left: 100%;
+}
+
+.slider__trackContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  /* background: #000; */
+}
+
+.slider__track {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
+  display: flex;
+}
+
+.slider__slide {
+  opacity: 0;
+  transition: opacity 800ms ease-in-out;
+}
+
+.slider__slideActive {
+  opacity: 1;
+}
+
+.slider__img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.slider__img:hover {
+  cursor: pointer;
+}
+
+/* Slider Navigation */
+
+.slider__nav {
+  position: absolute;
+  display: flex;
+  align-self: center;
+  bottom: 0.8rem;
+  right: 2rem;
+}
+
+.slider__indicator {
+  height: 0.6rem;
+  width: 0.6rem;
+  border: none;
+  border-radius: 100%;
+  margin-left: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.slider__indicatorActive {
+  background: rgba(255, 255, 255, 1);
+}
+
+.slider__indicator:hover {
+  cursor: pointer;
+}
