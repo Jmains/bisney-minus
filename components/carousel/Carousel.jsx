@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import s from "./Carousel.module.css";
 import { ChevronLeft, ChevronRight } from "../icons";
 
@@ -6,15 +6,20 @@ export default function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const numImages = images.length;
 
-  const nextSlide = async () => {
-    await setCurrentSlide(currentSlide === numImages - 1 ? 0 : currentSlide + 1);
-    console.log(currentSlide);
+  const nextSlide = () => {
+    setCurrentSlide(currentSlide === numImages - 1 ? 0 : currentSlide + 1);
   };
 
-  const prevSlide = async () => {
-    await setCurrentSlide(currentSlide === 0 ? numImages - 1 : currentSlide - 1);
-    console.log(currentSlide);
+  const prevSlide = () => {
+    setCurrentSlide(currentSlide === 0 ? numImages - 1 : currentSlide - 1);
   };
+
+  useEffect(() => {
+    const nextSlideIntervalId = setInterval(() => {
+      nextSlide();
+    }, 4500);
+    return () => clearInterval(nextSlideIntervalId);
+  }, [currentSlide]);
 
   return (
     <div className={s.slider__container}>
