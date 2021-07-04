@@ -35,3 +35,4 @@ yarn-error.log*
 
 # misc
 .DS_Store
+components/.DS_Store
