@@ -71,7 +71,7 @@ export default function navbar() {
         {width > smScreenBreakPoint ? (
           navLinks.map((link) => {
             return (
-              <span className={s.nav__linkContainer}>
+              <span key={link.text} className={s.nav__linkContainer}>
                 <a tabIndex="0" aria-label={link.text} className={s.nav__link} href="#">
                   <span className={s.nav__icon}>{link.icon}</span>
                   <p className={s.nav__linkText}>{link.text}</p>
@@ -129,7 +129,7 @@ const SmallScreenNav = () => {
         return (
           <>
             {idx < 3 && (
-              <span className={s.nav__linkContainer}>
+              <span key={idx} className={s.nav__linkContainer}>
                 <a tabIndex="0" aria-label={link.text} className={s.nav__link} href="#">
                   <span className={s.nav__icon}>{link.icon}</span>
                 </a>
