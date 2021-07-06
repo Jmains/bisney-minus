@@ -3,7 +3,7 @@ ACCOUNT MENU STYLES
 ********************************/
 
 .accMenu__container {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   padding: 0 1.5rem;

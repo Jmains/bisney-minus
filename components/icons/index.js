@@ -6,3 +6,4 @@ export { default as Home } from "./Home";
 export { default as Camera } from "./Camera";
 export { default as ChevronRight } from "./ChevronRight";
 export { default as ChevronLeft } from "./ChevronLeft";
+export { default as VerticalDots } from "./VerticalDots";

@@ -1,11 +1,40 @@
 .nav__container {
   display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 72px;
   justify-content: space-between;
   align-items: center;
-  background-color: #090b14;
+  background: transparent;
   padding: 0rem 1.4rem;
   padding-right: 0.5rem;
+  transition: background 200ms ease-in-out;
+  z-index: 50;
+}
+
+.nav__bgColor {
+  background: rgb(9, 11, 19);
+}
+
+.nav__container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 170px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.03) 15%,
+    rgba(0, 0, 0, 0.125) 30%,
+    rgba(0, 0, 0, 0.25) 46%,
+    rgba(0, 0, 0, 0.4) 61%,
+    rgba(0, 0, 0, 0.553) 75%,
+    rgba(0, 0, 0, 0.694) 88%,
+    rgba(0, 0, 0, 0.8)
+  );
+  z-index: -5;
 }
 
 .nav__listContainer {
@@ -14,6 +43,11 @@
 
 .nav__linkContainer {
   display: block;
+}
+
+.nav__moreOptionsContainer {
+  display: block;
+  position: relative;
 }
 
 .nav__link {
@@ -54,6 +88,10 @@
   width: 100%;
 }
 
+.moreOptsDropdown__link:hover .nav__linkText::before {
+  width: 100%;
+}
+
 .nav__icon {
   color: var(--pri);
   height: 1.1rem;
@@ -72,17 +110,17 @@
   padding: 0rem 1rem;
 }
 
-@media only screen and (max-width: 1024px) {
-  .nav__linkText:nth-last-child(-n + 3) {
-    display: none;
-  }
+.hide {
+  opacity: 0;
+}
 
-  .nav__iconContainer {
+@media only screen and (max-width: 1024px) {
+  .nav__icon {
     display: block;
     position: relative;
   }
 
-  .nav__iconContainer::before {
+  .nav__icon::before {
     content: "";
     position: absolute;
     bottom: -8px;
@@ -93,7 +131,40 @@
     background-color: var(--pri);
   }
 
-  .nav__link:hover .nav__iconContainer::before {
+  .nav__link:hover .nav__icon::before {
     width: 100%;
+  }
+
+  .moreOptsDropdown__container {
+    opacity: 0;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    width: 12rem;
+    border-radius: 4px;
+    background-color: rgb(24, 24, 24);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: opacity 300ms ease-in-out;
+  }
+
+  .nav__moreOptionsContainer:hover .moreOptsDropdown__container {
+    opacity: 1;
+  }
+
+  .moreOptsDropdown__listItem {
+  }
+
+  .moreOptsDropdown__link {
+    display: flex;
+    align-items: center;
+  }
+
+  .moreOptsDropdown__text {
+    color: var(--pri);
+    margin-left: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-size: 0.8rem;
+    font-weight: 500;
   }
 }

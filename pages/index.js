@@ -7,6 +7,7 @@ import Studios from "../components/studios/Studios";
 export default function Home() {
   return (
     <div>
+      <div className="bg__color"></div>
       <Navbar />
 
       <section id="slider">
