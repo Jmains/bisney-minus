@@ -8,10 +8,11 @@ export default function Home() {
   return (
     <div>
       <Navbar />
+
+      <section id="slider">
+        <Carousel />
+      </section>
       <div className="layout">
-        <section id="slider">
-          <Carousel />
-        </section>
         <section id="studios">
           <Studios />
         </section>
