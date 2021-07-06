@@ -1,14 +1,16 @@
 .studios__container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   gap: 0rem 2rem;
   max-width: 100%;
   height: 100%;
-  margin-top: 3rem;
+  margin-top: 0.5rem;
 }
 
 .studios__link {
-  aspect-ratio: 16/10;
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
   border-radius: 10px;
   background: linear-gradient(rgb(48, 50, 62), rgb(30, 31, 42));
   border: 3px solid rgba(255, 255, 255, 0.2);
@@ -22,12 +24,28 @@
 .studios__img {
   width: 100%;
   height: 100%;
+  inset: 0;
+  position: absolute;
   object-position: center;
   object-fit: cover;
 }
 
 .studios__link:hover {
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.07);
   border: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+.studios__video {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  z-index: -1;
+  height: 100%;
+  transform: scale(1);
+}
+
+.studios__link:hover .studios__video {
+  opacity: 1;
+  transform: scale(1.07);
 }

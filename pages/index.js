@@ -8,11 +8,13 @@ import Recommended from "../components/recommended/Recommended";
 export default function Home() {
   return (
     <div>
+      <div className="bg__color"></div>
       <Navbar />
+
+      <section id="slider">
+        <Carousel />
+      </section>
       <div className="layout">
-        <section id="slider">
-          <Carousel />
-        </section>
         <section id="studios">
           <Studios />
         </section>
