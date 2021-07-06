@@ -129,7 +129,7 @@ const SmallScreenNav = () => {
         return (
           <>
             {idx < 3 && (
-              <span key={idx} className={s.nav__linkContainer}>
+              <span key={link.text} className={s.nav__linkContainer}>
                 <a tabIndex="0" aria-label={link.text} className={s.nav__link} href="#">
                   <span className={s.nav__icon}>{link.icon}</span>
                 </a>
