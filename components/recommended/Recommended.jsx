@@ -7,9 +7,8 @@ import { Sliders } from "../slider/Slider";
 
 export default function Recommended({ title, images }) {
   return (
-    <div>
+    <div className={s.rec__container}>
       <h4 className={s.rec__title}>{title}</h4>
-
       <Sliders images={images} />
     </div>
   );

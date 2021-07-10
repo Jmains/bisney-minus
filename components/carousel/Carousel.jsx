@@ -2,6 +2,31 @@ import { useEffect, useRef, useState } from "react";
 import s from "./Carousel.module.css";
 import { ChevronLeft, ChevronRight } from "../icons";
 import useScreenWidth from "../../utils/useScreenWidth";
+import Slider from "react-slick";
+
+const NextSlideBtn = ({ onClick }) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`${s.slider__btn} ${s.slider__btnRight}`}
+      aria-label="Select this to see other featured content"
+    >
+      <ChevronRight style={{ height: "3rem", width: "3rem" }} />
+    </button>
+  );
+};
+
+const PrevSlideBtn = ({ onClick }) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`${s.slider__btn} ${s.slider__btnLeft}`}
+      aria-label="Select this to see other featured content"
+    >
+      <ChevronLeft style={{ height: "3rem", width: "3rem" }} />
+    </button>
+  );
+};
 
 export default function Carousel() {
   const numImages = images.length;
@@ -24,13 +49,13 @@ export default function Carousel() {
     }, 4500);
 
     return () => clearInterval(nextSlideIntervalId);
-  }, [currentSlide, width]);
+  }, [currentSlide]);
 
   const initializeSlidePosition = (slide, slideWidth, idx) => {
     slide.style.left = slideWidth * idx + "px";
   };
 
-  const moveToSlide = (track, targetSlide) => {
+  const handleMoveToSlide = (track, targetSlide) => {
     const amountToMove = targetSlide?.style.left;
     track.style.transform = `translateX(-${amountToMove})`;
   };
@@ -46,7 +71,7 @@ export default function Carousel() {
       targetSlide = currentSlideFrame?.nextElementSibling;
     }
 
-    moveToSlide(track, targetSlide);
+    handleMoveToSlide(track, targetSlide);
     setCurrentSlide(currentSlide === numImages - 1 ? 0 : currentSlide + 1);
   };
 
@@ -61,8 +86,15 @@ export default function Carousel() {
       targetSlide = currentSlideFrame?.previousElementSibling;
     }
 
-    moveToSlide(track, targetSlide);
+    handleMoveToSlide(track, targetSlide);
     setCurrentSlide(currentSlide === 0 ? numImages - 1 : currentSlide - 1);
+  };
+
+  const handleNavIndicatorClick = (idx) => {
+    const targetSlide = trackRef.current?.children[idx];
+    const track = trackRef?.current;
+    handleMoveToSlide(track, targetSlide);
+    setCurrentSlide(idx);
   };
 
   return (
@@ -107,10 +139,7 @@ export default function Carousel() {
             <li
               className={s.slider__navListItem}
               onClick={() => {
-                const targetSlide = trackRef.current?.children[idx];
-                const track = trackRef?.current;
-                moveToSlide(track, targetSlide);
-                setCurrentSlide(idx);
+                handleNavIndicatorClick(idx);
               }}
               key={idx}
             >

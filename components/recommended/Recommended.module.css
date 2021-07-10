@@ -1,6 +1,12 @@
+.rec__container {
+  margin-top: 2rem;
+}
+
 .rec__title {
   color: var(--pri);
   font-size: 1.25rem;
   letter-spacing: 1px;
   font-weight: 400;
+  margin: 0;
+  padding: 0.5rem 0;
 }
