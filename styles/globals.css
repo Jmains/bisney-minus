@@ -1,3 +1,6 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
+
 html,
 body {
   padding: 0;
@@ -29,7 +32,10 @@ a {
 }
 
 .layout {
+  position: relative;
   padding: 0 calc(3.5vw + 24px);
+  display: flex;
+  flex-direction: column;
 }
 
 .bg__color {

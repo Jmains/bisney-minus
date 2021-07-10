@@ -1,9 +1,16 @@
+import { useEffect, useRef, useState } from "react";
+import useScreenWidth from "../../utils/useScreenWidth";
+import { ChevronLeft, ChevronRight } from "../icons";
 import s from "./Recommended.module.css";
 
-export default function Recommended() {
+import { Sliders } from "../slider/Slider";
+
+export default function Recommended({ title, images }) {
   return (
     <div>
-      <h4 className={s.rec__title}>Recommended For You</h4>
+      <h4 className={s.rec__title}>{title}</h4>
+
+      <Sliders images={images} />
     </div>
   );
 }
