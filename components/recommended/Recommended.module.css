@@ -1,0 +1,6 @@
+.rec__title {
+  color: var(--pri);
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+}

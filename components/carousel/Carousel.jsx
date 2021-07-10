@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import s from "./Carousel.module.css";
 import { ChevronLeft, ChevronRight } from "../icons";
+import useScreenWidth from "../../utils/useScreenWidth";
 
 export default function Carousel() {
   const numImages = images.length;
   const slideRef = useRef();
   const trackRef = useRef();
+  const { width } = useScreenWidth();
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -22,7 +24,7 @@ export default function Carousel() {
     }, 4500);
 
     return () => clearInterval(nextSlideIntervalId);
-  }, [currentSlide]);
+  }, [currentSlide, width]);
 
   const initializeSlidePosition = (slide, slideWidth, idx) => {
     slide.style.left = slideWidth * idx + "px";
