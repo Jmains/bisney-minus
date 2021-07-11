@@ -37,7 +37,7 @@ const images = [
 
 export default function Home() {
   return (
-    <div>
+    <div className={"home"}>
       <div className="bg__color"></div>
       <Navbar />
 
