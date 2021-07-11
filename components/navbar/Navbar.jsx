@@ -44,10 +44,11 @@ export default function navbar() {
     const handleScroll = throttle(() => {
       const offset = 10;
       const { scrollTop } = document.documentElement;
+      console.log(scrollTop);
 
       const scrolled = scrollTop > offset;
       setHasScrolled(scrolled);
-    }, 300);
+    }, 200);
 
     handleScroll();
     document.addEventListener("scroll", handleScroll);
@@ -64,7 +65,7 @@ export default function navbar() {
       <div className={s.nav__listContainer}>
         <div className={s.nav__link}>
           <a className={s.nav__logo} href="#">
-            Bisney
+            Bisney {console.log(hasScrolled)}
           </a>
         </div>
 
@@ -108,6 +109,9 @@ export default function navbar() {
           await setShowAccountMenu(true);
         }}
         className={s.nav__profileImgContainer}
+        aria-haspopup="true"
+        aria-expanded={showAccountMenu ? "true" : "false"}
+        role="button"
       >
         {showAccountMenu ? (
           <AccountMenu setShowAccountMenu={setShowAccountMenu} />

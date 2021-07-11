@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 
 function getScreenWidth() {
-  const { innerWidth: width } = window;
+  const width = window?.innerWidth;
   return {
     width,
   };
@@ -15,6 +15,7 @@ export default function useScreenWidth() {
   };
 
   useEffect(() => {
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

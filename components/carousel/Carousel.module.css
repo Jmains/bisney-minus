@@ -1,6 +1,5 @@
 .slider__container {
   position: relative;
-
   margin: 0.5rem 0;
 }
 
@@ -13,7 +12,7 @@
   height: 100%;
   color: white;
   transition: opacity 200ms ease-in;
-  z-index: 3;
+  z-index: 30;
 }
 
 .slider__btn:hover,
@@ -37,8 +36,7 @@
 .slider__trackContainer {
   position: relative;
   aspect-ratio: 20 / 5;
-  min-height: 200px;
-  max-width: 100vw;
+  min-height: 75px;
   height: 100%;
   margin: 0 auto;
 }
