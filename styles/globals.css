@@ -36,6 +36,8 @@ a {
   padding: 0 calc(3.5vw + 24px);
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  padding-bottom: 4rem;
 }
 
 .bg__color {
@@ -51,7 +53,8 @@ a {
   opacity: 0.5;
   padding: 10px;
   transition-property: opacity;
-  transition-duration: 300ms linear 0ms;
+  transition-duration: 250ms ease;
+  position: relative;
 }
 
 .slick-list {
@@ -63,6 +66,16 @@ a {
   opacity: 1;
 }
 
-.home {
-  position: relative;
+.slick-dots li button::before {
+  font-size: 11px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: "•";
+  opacity: 0.4;
+  text-align: center;
+  color: white;
 }

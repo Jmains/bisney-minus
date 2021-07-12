@@ -1,137 +1,74 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import s from "./Carousel.module.css";
 import { ChevronLeft, ChevronRight } from "../icons";
-import useScreenWidth from "../../utils/useScreenWidth";
 import Slider from "react-slick";
 
 export default function Carousel() {
-  const numImages = images.length;
-  const slideRef = useRef();
-  const trackRef = useRef();
-  const { width } = useScreenWidth();
-
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    const slides = Array.from(trackRef.current?.children);
-    const slideWidth = slides[0].getBoundingClientRect().width ?? 0;
-
-    slides.forEach((slide, idx) => {
-      initializeSlidePosition(slide, slideWidth, idx);
-    });
-
-    const nextSlideIntervalId = setInterval(() => {
-      nextSlide();
-    }, 4500);
-
-    return () => clearInterval(nextSlideIntervalId);
-  }, [currentSlide]);
-
-  const initializeSlidePosition = (slide, slideWidth, idx) => {
-    slide.style.left = slideWidth * idx + "px";
-  };
-
-  const handleMoveToSlide = (track, targetSlide) => {
-    const amountToMove = targetSlide?.style.left;
-    track.style.transform = `translateX(-${amountToMove})`;
-  };
-
-  const nextSlide = () => {
-    const currentSlideFrame = trackRef.current?.children[currentSlide];
-    const track = trackRef?.current;
-
-    let targetSlide;
-    if (currentSlide === numImages - 1) {
-      targetSlide = trackRef.current?.children[0];
-    } else {
-      targetSlide = currentSlideFrame?.nextElementSibling;
-    }
-
-    handleMoveToSlide(track, targetSlide);
-    setCurrentSlide(currentSlide === numImages - 1 ? 0 : currentSlide + 1);
-  };
-
-  const prevSlide = () => {
-    const currentSlideFrame = trackRef.current?.children[currentSlide];
-    const track = trackRef?.current;
-
-    let targetSlide;
-    if (currentSlide === 0) {
-      targetSlide = trackRef.current?.children[numImages - 1];
-    } else {
-      targetSlide = currentSlideFrame?.previousElementSibling;
-    }
-
-    handleMoveToSlide(track, targetSlide);
-    setCurrentSlide(currentSlide === 0 ? numImages - 1 : currentSlide - 1);
-  };
-
-  const handleNavIndicatorClick = (idx) => {
-    const targetSlide = trackRef.current?.children[idx];
-    const track = trackRef?.current;
-    handleMoveToSlide(track, targetSlide);
-    setCurrentSlide(idx);
-  };
-
-  return (
-    <div className={s.slider__container}>
+  const NextSlideBtn = ({ onClick }) => {
+    return (
       <button
-        onClick={() => nextSlide()}
+        onClick={onClick}
         className={`${s.slider__btn} ${s.slider__btnRight}`}
         aria-label="Select this to see other featured content"
       >
-        <ChevronRight />
+        <ChevronRight style={{ height: "3rem", width: "3rem" }} />
       </button>
+    );
+  };
+
+  const PrevSlideBtn = ({ onClick }) => {
+    return (
       <button
-        onClick={() => prevSlide()}
+        onClick={onClick}
         className={`${s.slider__btn} ${s.slider__btnLeft}`}
         aria-label="Select this to see other featured content"
       >
-        <ChevronLeft />
+        <ChevronLeft style={{ height: "3rem", width: "3rem" }} />
       </button>
-      <div className={s.slider__trackContainer}>
-        <ul ref={trackRef} className={s.slider__track}>
-          {images.map((img, idx) => {
-            return (
-              <li
-                ref={slideRef}
-                key={idx}
-                className={
-                  idx === currentSlide
-                    ? `${s.slider__slide} ${s.slider__slideActive}`
-                    : `${s.slider__slide}`
-                }
-              >
-                <img className={s.slider__img} src={img.url} alt="" />
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+    );
+  };
 
-      <ul className={s.slider__nav}>
-        {images.map((_, idx) => {
-          return (
-            <li
-              className={s.slider__navListItem}
-              onClick={() => {
-                handleNavIndicatorClick(idx);
-              }}
-              key={idx}
-            >
-              <button
-                className={
-                  idx === currentSlide
-                    ? `${s.slider__indicator} ${s.slider__indicator_Active}`
-                    : `${s.slider__indicator}`
-                }
-                tabIndex="-1"
-              ></button>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+  const settings = {
+    speed: 500,
+    dots: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    appendDots: (dots) => (
+      <div
+        style={{
+          display: "flex",
+          bottom: "17px",
+          right: "14px",
+          justifyContent: "flex-end",
+        }}
+      >
+        <ul style={{ margin: "0px" }}>{dots}</ul>
+      </div>
+    ),
+
+    nextArrow: <NextSlideBtn />,
+    prevArrow: <PrevSlideBtn />,
+  };
+
+  return (
+    <Slider className={s.slider__container} {...settings}>
+      {images.map((img, idx) => {
+        return (
+          <li key={idx}>
+            <a className={`${s.slider__card}`} href="#">
+              <div className={s.slider__imgContainer}>
+                <img className={s.slider__img} src={img.url} alt="" />
+              </div>
+            </a>
+          </li>
+        );
+      })}
+    </Slider>
   );
 }
 

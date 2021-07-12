@@ -3,6 +3,8 @@
   margin: 0.5rem 0;
 }
 
+/* SLIDER BUTTON STYLES */
+
 .slider__btn {
   position: absolute;
   border: none;
@@ -33,37 +35,16 @@
   transform: translateX(100%);
 }
 
-.slider__trackContainer {
+/* END SLIDER BUTTON STYLES */
+
+.slider__card {
   position: relative;
-  aspect-ratio: 20 / 5;
-  min-height: 75px;
-  height: 100%;
-  margin: 0 auto;
-}
-
-.slider__track {
-  position: relative;
-  padding: 0;
-  height: 100%;
+  display: block;
   width: 100%;
-  transform: translateX(0);
-  transition: transform 350ms ease;
-}
-
-.slider__slide {
-  opacity: 0.5;
-  position: absolute;
-  inset: 0;
-  padding: 0 0.5rem;
-  transition-property: opacity, border;
-  transition-duration: 400ms;
-  transition-timing-function: ease-in-out;
-  height: 100%;
-  width: 100%;
-}
-
-.slider__slideActive {
-  opacity: 1;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 15px 25px rgba(0, 0, 0, 0.9);
 }
 
 .slider__img {
@@ -71,68 +52,18 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 4px;
-  box-shadow: 2px 15px 25px rgba(0, 0, 0, 0.9);
 }
 
-.slider__slide::after {
-  position: absolute;
-  border: 4px solid rgba(255, 255, 255, 0);
-  inset: 0px;
+.slider__imgContainer::after {
   content: "";
-  transition: border 250ms linear 0s;
-  border-radius: 4px;
-}
-
-.slider__slide:hover.slider__slide::after {
-  border: 4px solid rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-}
-
-/* Slider Navigation */
-
-.slider__nav {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  bottom: 0rem;
-  right: 2rem;
-  height: 20px;
-  z-index: 20;
+  inset: 0;
+  opacity: 0;
+  border: 4px solid rgba(255, 255, 255, 1);
+  border-radius: 4px;
+  transition: opacity 250ms ease;
 }
 
-.slider__navListItem {
-  /* display: inline-block; */
-  margin: 0 0.5rem;
-  cursor: pointer;
-  flex-basis: 100%;
-}
-
-.slider__indicator {
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  border: none;
-  /* border-radius: 50%; */
-  background: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-}
-
-.slider__indicator_Active {
-  background: rgba(255, 255, 255, 1);
-}
-
-@media only screen and (max-width: 768px) {
-  .slider__indicator {
-    height: 0.5rem;
-    width: 0.5rem;
-    border: none;
-    border-radius: 100%;
-    background: rgba(255, 255, 255, 0.5);
-  }
-
-  .slider__indicator_Active {
-    background: rgba(255, 255, 255, 1);
-  }
+.slider__card:hover .slider__imgContainer::after {
+  opacity: 1;
 }
