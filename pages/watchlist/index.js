@@ -1,10 +1,15 @@
-import Head from "next/head";
+import Card from "../../components/card/Card";
+import s from "./watchlist.module.css";
 
-import Navbar from "../components/navbar/Navbar";
-import Carousel from "../components/carousel/Carousel";
-import Studios from "../components/studios/Studios";
-import Recommended from "../components/recommended/Recommended";
-import Layout from "../components/layout/layout";
+export default function Watchlist() {
+  return (
+    <div className={s.grid}>
+      {images.map((img, idx) => {
+        return <Card key={idx} img={img} />;
+      })}
+    </div>
+  );
+}
 
 const images = [
   {
@@ -31,25 +36,7 @@ const images = [
   {
     url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/9FE32EC34EF424786CBC0DE0838A861E66863B79A2E62B66D8409538502657BC/scale?width=800&aspectRatio=1.78&format=jpeg",
   },
+  // {
+  //   url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/144E0B00FAF6DF0ED875565D49E6BDEF07E4555F5128567A2ED4196F37CF409D/badging?width=800&aspectRatio=1.78&format=jpeg&label=originals",
+  // },
 ];
-
-export default function Home() {
-  return (
-    <>
-      <section id="slider">
-        <Carousel />
-      </section>
-      <section id="studios">
-        <Studios />
-      </section>
-      <section id="recommended">
-        <Recommended images={images} title="Recommended For You" />
-      </section>
-      <section id="recommended">
-        <Recommended images={images} title="New to Bisney+" />
-      </section>
-      <section id="new"></section>
-      <section id="continueWatching"></section>
-    </>
-  );
-}

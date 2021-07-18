@@ -31,24 +31,6 @@ a {
   --bg: rgb(26, 29, 41);
 }
 
-.layout {
-  position: relative;
-  padding: 0 calc(3.5vw + 24px);
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  padding-bottom: 4rem;
-}
-
-.bg__color {
-  background-color: rgb(26, 29, 41);
-  position: fixed;
-  height: 100vh;
-  top: 0px;
-  width: 100%;
-  z-index: -50;
-}
-
 .slick-slide {
   opacity: 0.5;
   padding: 10px;
