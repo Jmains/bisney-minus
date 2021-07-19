@@ -3,7 +3,7 @@ import ContentGrid from "../components/contentGrid/ContentGrid";
 
 export default function Watchlist() {
   return (
-    <ContentGrid title="Movies" filter>
+    <ContentGrid title="Watchlist" filter>
       {images.map((img, idx) => {
         return <Card key={idx} img={img} />;
       })}
