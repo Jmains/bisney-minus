@@ -40,18 +40,18 @@ const navLinks = [
 ];
 
 export default function navbar() {
+  const smScreenBreakPoint = 1024;
+
   const [showAccountMenu, setShowAccountMenu] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [showMoreOptions, setShowMoreOptions] = useState(false);
-  const smScreenBreakPoint = 1024;
 
-  const { width } = useScreenWidth();
+  const { width: currentScreenWidth } = useScreenWidth();
 
   useEffect(() => {
     const handleScroll = throttle(() => {
       const offset = 10;
       const { scrollTop } = document.documentElement;
-      console.log(scrollTop);
 
       const scrolled = scrollTop > offset;
       setHasScrolled(scrolled);
@@ -72,11 +72,12 @@ export default function navbar() {
       <div className={s.nav__listContainer}>
         <div className={s.nav__link}>
           <Link href="/">
-            <a className={s.nav__logo}>Bisney {console.log(hasScrolled)}</a>
+            <a className={s.nav__logo}>Bisney+</a>
           </Link>
         </div>
 
-        {width > smScreenBreakPoint ? (
+        {/* Nav links */}
+        {currentScreenWidth > smScreenBreakPoint ? (
           navLinks.map((link) => {
             return (
               <span key={link.text} className={s.nav__linkContainer}>
@@ -90,29 +91,15 @@ export default function navbar() {
             );
           })
         ) : (
-          <>
-            <SmallScreenNav />
-            <span className={s.nav__moreOptionsContainer}>
-              <div
-                onMouseEnter={() => {
-                  setShowMoreOptions(true);
-                }}
-                role="option"
-                tabIndex="0"
-                aria-label="More options"
-                className={s.nav__link}
-                href="#"
-              >
-                <VerticalDots className={s.nav__icon} />
-              </div>
-              {showMoreOptions && (
-                <MoreOptionsDropdown setShowMoreOptions={setShowMoreOptions} />
-              )}
-            </span>
-          </>
+          <SmallScreenNav
+            setShowMoreOptions={setShowMoreOptions}
+            showMoreOptions={showMoreOptions}
+          />
         )}
       </div>
+      {/* End Nav links */}
 
+      {/* Avatar and Account Menu */}
       <div
         onMouseEnter={async () => {
           await setShowAccountMenu(true);
@@ -131,11 +118,12 @@ export default function navbar() {
           />
         )}
       </div>
+      {/* End Avatar and Account Menu */}
     </div>
   );
 }
 
-const SmallScreenNav = () => {
+const SmallScreenNav = ({ setShowMoreOptions, showMoreOptions }) => {
   return (
     <>
       {navLinks.map((link, idx) => {
@@ -153,37 +141,65 @@ const SmallScreenNav = () => {
           </>
         );
       })}
+      <span
+        onMouseLeave={() => {
+          setShowMoreOptions(false);
+        }}
+        className={s.nav__moreOptionsContainer}
+      >
+        <div
+          onMouseEnter={() => {
+            setShowMoreOptions(true);
+          }}
+          role="option"
+          tabIndex="0"
+          aria-label="More options"
+          className={s.nav__link}
+        >
+          <VerticalDots className={s.nav__icon} />
+        </div>
+        <MoreOptionsDropdown showMoreOptions={showMoreOptions} />
+      </span>
     </>
   );
 };
 
-const MoreOptionsDropdown = ({ setShowMoreOptions }) => {
+const MoreOptionsDropdown = ({ showMoreOptions }) => {
   return (
     <ul
-      onMouseLeave={() => setShowMoreOptions(false)}
-      className={s.moreOptsDropdown__container}
+      className={
+        showMoreOptions
+          ? `${s.dropDownMenu__container}  ${s.dropDownMenu_active}`
+          : `${s.dropDownMenu__container}`
+      }
     >
-      <li className={s.moreOptsDropdown__listItem}>
-        <a tabIndex="0" aria-label="Originals" className={s.moreOptsDropdown__link} href="#">
-          <Star className={s.nav__icon} />
-          <p className={s.nav__linkText}>Originals</p>
-        </a>
+      <li className={s.dropDownMenu__listItem}>
+        <Link href="/originals">
+          <a tabIndex="0" aria-label="Originals" className={s.dropDownMenu__link}>
+            <Star className={s.nav__icon} />
+            <p className={s.nav__linkText}>Originals</p>
+          </a>
+        </Link>
       </li>
-      <li className={s.moreOptsDropdown__listItem}>
-        <a tabIndex="0" aria-label="Movies" className={s.moreOptsDropdown__link} href="#">
-          <span className="">
-            <Film className={s.nav__icon} />
-          </span>
-          <p className={s.nav__linkText}>Movies</p>
-        </a>
+      <li className={s.dropDownMenu__listItem}>
+        <Link href="/movies">
+          <a tabIndex="0" aria-label="Movies" className={s.dropDownMenu__link} href="#">
+            <span className="">
+              <Film className={s.nav__icon} />
+            </span>
+            <p className={s.nav__linkText}>Movies</p>
+          </a>
+        </Link>
       </li>
-      <li className={s.moreOptsDropdown__listItem}>
-        <a tabIndex="0" aria-label="Series" className={s.moreOptsDropdown__link} href="#">
-          <span className="">
-            <Camera className={s.nav__icon} />
-          </span>
-          <p className={s.nav__linkText}>Series</p>
-        </a>
+      <li className={s.dropDownMenu__listItem}>
+        <Link href="/series">
+          <a tabIndex="0" aria-label="Series" className={s.dropDownMenu__link} href="#">
+            <span className="">
+              <Camera className={s.nav__icon} />
+            </span>
+            <p className={s.nav__linkText}>Series</p>
+          </a>
+        </Link>
       </li>
     </ul>
   );

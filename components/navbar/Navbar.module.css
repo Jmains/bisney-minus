@@ -10,7 +10,7 @@
   background: transparent;
   padding: 0rem 1.4rem;
   padding-right: 0.5rem;
-  transition: background 200ms ease-in-out;
+  transition: background 200ms ease-in;
   z-index: 50;
 }
 
@@ -53,7 +53,7 @@
 .nav__link {
   display: flex;
   align-items: center;
-  padding: 1rem 1.25rem;
+  padding: 1rem 0.85rem;
   position: relative;
   cursor: pointer;
 }
@@ -88,14 +88,14 @@
   width: 100%;
 }
 
-.moreOptsDropdown__link:hover .nav__linkText::before {
+.dropDownMenu__link:hover .nav__linkText::before {
   width: 100%;
 }
 
 .nav__icon {
   color: var(--pri);
-  height: 1.1rem;
-  width: 1.1rem;
+  height: 1.25rem;
+  width: 1.25rem;
 }
 
 .nav__profileImg {
@@ -135,33 +135,51 @@
     width: 100%;
   }
 
-  .moreOptsDropdown__container {
-    opacity: 0;
+  .dropDownMenu__container {
+    visibility: hidden;
     position: absolute;
+    opacity: 0;
+    display: block;
     top: 30px;
     left: 15px;
     width: 12rem;
+    padding: 0.5rem 1rem;
     border-radius: 4px;
     background-color: rgb(24, 24, 24);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: opacity 300ms ease-in-out;
+
+    transition-property: opacity, visibility;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+    transition-delay: 30ms;
   }
 
-  .nav__moreOptionsContainer:hover .moreOptsDropdown__container {
-    opacity: 1;
-  }
-
-  .moreOptsDropdown__link {
+  .dropDownMenu__link {
     display: flex;
     align-items: center;
   }
 
-  .moreOptsDropdown__text {
+  .dropDownMenu__text {
     color: var(--pri);
     margin-left: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     font-size: 0.8rem;
     font-weight: 500;
+  }
+
+  .dropDownMenu_active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .nav__profileImg {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }
