@@ -4,31 +4,38 @@ import { useEffect, useState } from "react";
 import AccountMenu from "./accountMenu/AccountMenu";
 import throttle from "lodash.throttle";
 import useScreenWidth from "../../utils/useScreenWidth";
+import Link from "next/link";
 
 const navLinks = [
   {
     icon: <Home className={s.nav__icon} />,
     text: "Home",
+    href: "/",
   },
   {
     icon: <Search className={s.nav__icon} />,
     text: "Search",
+    href: "/search",
   },
   {
     icon: <Plus className={s.nav__icon} />,
     text: "Watchlist",
+    href: "/watchlist",
   },
   {
     icon: <Star className={s.nav__icon} />,
     text: "Originals",
+    href: "/originals",
   },
   {
     icon: <Film className={s.nav__icon} />,
     text: "Movies",
+    href: "/movies",
   },
   {
     icon: <Camera className={s.nav__icon} />,
     text: "Series",
+    href: "/series",
   },
 ];
 
@@ -64,19 +71,21 @@ export default function navbar() {
     >
       <div className={s.nav__listContainer}>
         <div className={s.nav__link}>
-          <a className={s.nav__logo} href="#">
-            Bisney {console.log(hasScrolled)}
-          </a>
+          <Link href="/">
+            <a className={s.nav__logo}>Bisney {console.log(hasScrolled)}</a>
+          </Link>
         </div>
 
         {width > smScreenBreakPoint ? (
           navLinks.map((link) => {
             return (
               <span key={link.text} className={s.nav__linkContainer}>
-                <a tabIndex="0" aria-label={link.text} className={s.nav__link} href="#">
-                  <span className={s.nav__icon}>{link.icon}</span>
-                  <p className={s.nav__linkText}>{link.text}</p>
-                </a>
+                <Link href={link.href}>
+                  <a tabIndex="0" aria-label={link.text} className={s.nav__link}>
+                    <span className={s.nav__icon}>{link.icon}</span>
+                    <p className={s.nav__linkText}>{link.text}</p>
+                  </a>
+                </Link>
               </span>
             );
           })
@@ -134,9 +143,11 @@ const SmallScreenNav = () => {
           <>
             {idx < 3 && (
               <span key={link.text} className={s.nav__linkContainer}>
-                <a tabIndex="0" aria-label={link.text} className={s.nav__link} href="#">
-                  <span className={s.nav__icon}>{link.icon}</span>
-                </a>
+                <Link href={link.href}>
+                  <a tabIndex="0" aria-label={link.text} className={s.nav__link} href="#">
+                    <span className={s.nav__icon}>{link.icon}</span>
+                  </a>
+                </Link>
               </span>
             )}
           </>
