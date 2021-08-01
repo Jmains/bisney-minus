@@ -3,7 +3,7 @@ import ContentGrid from "../components/contentGrid/ContentGrid";
 
 export default function Series() {
   return (
-    <ContentGrid title="Series" filter>
+    <ContentGrid>
       {images.map((img, idx) => {
         return <Card key={idx} img={img} />;
       })}

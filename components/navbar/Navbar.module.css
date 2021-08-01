@@ -10,7 +10,7 @@
   background: transparent;
   padding: 0rem 1.4rem;
   padding-right: 0.5rem;
-  transition: background 200ms ease-in;
+  transition: background 100ms linear;
   z-index: 50;
 }
 
@@ -21,7 +21,9 @@
 .nav__container::after {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 170px;
   background: linear-gradient(
     to top,

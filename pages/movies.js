@@ -1,13 +1,32 @@
 import Card from "../components/card/Card";
 import ContentGrid from "../components/contentGrid/ContentGrid";
+import HeaderWithFilter from "../components/headerWithFilter/HeaderWithFilter";
 
-export default function Watchlist() {
+const filterOptions = [
+  "FEATURED",
+  "ALL MOVIES A-Z",
+  "ACTION/ADVENTURE",
+  "ANIMATION",
+  "COMEDY",
+  "DOCUMENTARY",
+  "DRAMA",
+  "KIDS",
+  "SHORTS",
+  "ULTRA HD AND HDR",
+];
+
+export default function Movies() {
   return (
-    <ContentGrid title="Movies" filter>
-      {images.map((img, idx) => {
-        return <Card key={idx} img={img} />;
-      })}
-    </ContentGrid>
+    <div>
+      <HeaderWithFilter title={"Movies"} filterOptions={filterOptions} />
+      <div style={{ marginTop: "5rem" }}>
+        <ContentGrid>
+          {images.map((img, idx) => {
+            return <Card key={idx} img={img} />;
+          })}
+        </ContentGrid>
+      </div>
+    </div>
   );
 }
 
@@ -21,11 +40,9 @@ const images = [
   {
     url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/A70B621E6AEA078E1CC33D0941B23C3CF64EA6EB0C620BBA1BFABB58663A90A3/badging?width=800&aspectRatio=1.78&format=jpeg&label=originals",
   },
-
   {
     url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/9FE32EC34EF424786CBC0DE0838A861E66863B79A2E62B66D8409538502657BC/scale?width=800&aspectRatio=1.78&format=jpeg",
   },
-
   {
     url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F48C2D492B31714C94AB0DD0BCF3D3CA7EAFB658F922BF313011C9D308B9B494/scale?width=800&aspectRatio=1.78&format=jpeg",
   },
