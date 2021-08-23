@@ -5,7 +5,7 @@
   flex-direction: column;
   overflow-x: hidden;
   padding-bottom: 4rem;
-  min-height: 100vh - 72px;
+  /* min-height: calc(100vh - 72px); */
 }
 
 .bg__color {

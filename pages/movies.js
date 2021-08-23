@@ -19,7 +19,7 @@ export default function Movies() {
   return (
     <div>
       <HeaderWithFilter title={"Movies"} filterOptions={filterOptions} />
-      <div style={{ marginTop: "5rem" }}>
+      <div style={{ marginTop: "6rem" }}>
         <ContentGrid>
           {images.map((img, idx) => {
             return <Card key={idx} img={img} />;
@@ -89,7 +89,6 @@ const images = [
   {
     url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/8A0F5D7C2FEB3B0D3CE7AA153016E54A2619EC12F307B1D168F022FA5B31A6F0/badging?width=800&aspectRatio=1.78&format=jpeg&label=originals",
   },
-
   {
     url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/8A0F5D7C2FEB3B0D3CE7AA153016E54A2619EC12F307B1D168F022FA5B31A6F0/badging?width=800&aspectRatio=1.78&format=jpeg&label=originals",
   },
