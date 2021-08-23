@@ -10,7 +10,7 @@
   background: transparent;
   padding: 0rem 1.4rem;
   padding-right: 0.5rem;
-  transition: background 100ms linear;
+  transition: background 50ms linear;
   z-index: 50;
 }
 
@@ -24,7 +24,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 170px;
+  height: 72px;
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0),

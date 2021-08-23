@@ -50,7 +50,7 @@ export default function navbar() {
 
   useEffect(() => {
     const handleScroll = throttle(() => {
-      const offset = 10;
+      const offset = 2;
       const { scrollTop } = document.documentElement;
 
       const scrolled = scrollTop > offset;
