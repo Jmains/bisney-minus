@@ -1,13 +1,29 @@
 import Card from "../components/card/Card";
 import ContentGrid from "../components/contentGrid/ContentGrid";
+import HeaderWithFilter from "../components/headerWithFilter/HeaderWithFilter";
+
+const filterOptions = [
+  "FEATURED",
+  "ALL SERIES A-Z",
+  "ACTION/ADVENTURE",
+  "ANIMATION",
+  "COMEDY",
+  "DOCUSERIES",
+  "KIDS",
+];
 
 export default function Series() {
   return (
-    <ContentGrid>
-      {images.map((img, idx) => {
-        return <Card key={idx} img={img} />;
-      })}
-    </ContentGrid>
+    <div>
+      <HeaderWithFilter title={"Series"} filterOptions={filterOptions} />
+      <div style={{ marginTop: "6rem" }}>
+        <ContentGrid>
+          {images.map((img, idx) => {
+            return <Card key={idx} img={img} />;
+          })}
+        </ContentGrid>
+      </div>
+    </div>
   );
 }
 
