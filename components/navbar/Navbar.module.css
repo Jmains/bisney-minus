@@ -59,7 +59,7 @@
 .nav__link {
   display: flex;
   align-items: center;
-  padding: 1rem 1rem;
+  padding: 1.35rem 1.35rem;
   position: relative;
   cursor: pointer;
 }
