@@ -3,8 +3,8 @@
   padding: 1rem calc(3.5vw + 24px);
   padding-top: 5.5rem;
   margin: 0;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   width: 100%;
   background: var(--bg);
   z-index: 30;
@@ -21,15 +21,15 @@
 
 .header__titleWithFilter {
   display: flex;
-  align-items: baseline;
   position: relative;
+  align-items: baseline;
 }
 
 .header__filterButton {
   position: relative;
   bottom: 9px;
   background: rgba(255, 255, 255, 0.15);
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border-radius: 20px;
   margin-left: 2rem;
   color: white;
@@ -93,8 +93,8 @@
 .dropDownMenu__text {
   color: rgb(187, 187, 187);
   margin: 0;
-  padding: 0.5rem;
-  margin-left: 0.5rem;
+  padding: 0.5em;
+  margin-left: 0.5em;
   text-transform: uppercase;
   letter-spacing: 1.1px;
   font-size: 0.8rem;
@@ -119,4 +119,34 @@
   z-index: 50;
   cursor: default;
   outline: 2px solid transparent;
+}
+
+@media only screen and (max-width: 640px) {
+  .header__filterButtonContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 5rem;
+  }
+
+  .header__title {
+    font-size: 2rem;
+    line-height: 1.4;
+    color: var(--pri);
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .header__filterButton {
+    font-size: 0.75rem;
+  }
+
+  .dropDownMenu__container {
+    width: 10.62rem;
+  }
+
+  .dropDownMenu__text {
+    font-size: 0.65rem;
+  }
 }
