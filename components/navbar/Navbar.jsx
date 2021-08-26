@@ -104,7 +104,6 @@ export default function Navbar() {
           setShowAccountMenu(true);
         }}
         onClick={() => {
-          console.log("Clikcing");
           setShowAccountMenu((prev) => !prev);
         }}
         className={s.nav__profileImgContainer}

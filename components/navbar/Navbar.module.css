@@ -86,17 +86,20 @@
   bottom: -8px;
   width: 0%;
   height: 2px;
+  opacity: 0;
   transition: 0.2s ease-out 0.05s;
-  transition-property: width;
+  transition-property: width, opacity;
   background-color: var(--pri);
 }
 
 .nav__linkContainer:hover .nav__linkText::before {
   width: 100%;
+  opacity: 100%;
 }
 
 .dropDownMenu__link:hover .nav__linkText::before {
   width: 100%;
+  opacity: 100%;
 }
 
 .nav__icon {
