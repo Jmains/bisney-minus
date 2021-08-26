@@ -29,8 +29,8 @@ const PrevSlideBtn = ({ onClick }) => {
 const Sliders = ({ images }) => {
   const settings = {
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     infinite: false,
     responsive: [
       {
