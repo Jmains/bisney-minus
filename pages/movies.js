@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Card from "../components/card/Card";
 import ContentGrid from "../components/contentGrid/ContentGrid";
 import HeaderWithFilter from "../components/headerWithFilter/HeaderWithFilter";
@@ -30,6 +31,9 @@ const headerWrapper = {
 export default function Movies() {
   return (
     <div>
+      <Head>
+        <title>All Movies | Bisney-</title>
+      </Head>
       <div style={headerWrapper}>
         <HeaderWithFilter title={"Movies"} filterOptions={filterOptions} />
       </div>
@@ -90,7 +94,6 @@ const images = [
   {
     url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F48C2D492B31714C94AB0DD0BCF3D3CA7EAFB658F922BF313011C9D308B9B494/scale?width=800&aspectRatio=1.78&format=jpeg",
   },
-
   {
     url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/A70B621E6AEA078E1CC33D0941B23C3CF64EA6EB0C620BBA1BFABB58663A90A3/badging?width=800&aspectRatio=1.78&format=jpeg&label=originals",
   },
@@ -115,7 +118,6 @@ const images = [
   {
     url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F48C2D492B31714C94AB0DD0BCF3D3CA7EAFB658F922BF313011C9D308B9B494/scale?width=800&aspectRatio=1.78&format=jpeg",
   },
-
   {
     url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/BB81D72237DA59D1354C35E750A621E92E11358B3E90B1214EAF81D71BEB65A9/scale?width=800&aspectRatio=1.78&format=jpeg",
   },

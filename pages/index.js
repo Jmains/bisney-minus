@@ -1,11 +1,7 @@
 import Head from "next/head";
-
-import Navbar from "../components/navbar/Navbar";
 import Carousel from "../components/carousel/Carousel";
 import Studios from "../components/studios/Studios";
 import ContentSlider from "../components/contentSlider/ContentSlider";
-import Layout from "../components/layout/layout";
-import useScreenWidth from "../utils/useScreenWidth";
 
 const images = [
   {
@@ -37,17 +33,18 @@ const images = [
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Bisney- | Movies and Shows</title>
+      </Head>
       <section id="slider">
         <Carousel />
       </section>
       <section id="studios">
         <Studios />
       </section>
-      <div style={{ marginTop: "1.5rem" }}>
-        <section id="recommended">
-          <ContentSlider images={images} title="Recommended For You" />
-        </section>
-      </div>
+      <section id="recommended" style={{ marginTop: "1.5rem" }}>
+        <ContentSlider images={images} title="Recommended For You" />
+      </section>
       <section id="new">
         <ContentSlider images={images} title="New to Bisney+" />
       </section>

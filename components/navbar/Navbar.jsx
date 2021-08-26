@@ -72,7 +72,7 @@ export default function Navbar() {
       <div className={s.nav__listContainer}>
         <div className={s.nav__logoLink}>
           <Link href="/">
-            <a className={s.nav__logo}>Bisney+</a>
+            <a className={s.nav__logo}>Bisney-</a>
           </Link>
         </div>
         {/* Nav links */}

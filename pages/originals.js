@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Card from "../components/card/Card";
 import ContentGrid from "../components/contentGrid/ContentGrid";
 import ContentSlider from "../components/contentSlider/ContentSlider";
@@ -38,10 +39,14 @@ const fadeUp = `
 export default function Originals() {
   return (
     <div>
+      <Head>
+        <title>Originals | Bisney-</title>
+      </Head>
       <div style={headerWrapper}>
         <style children={fadeUp} />
         <h2 style={titleStyles}>Originals</h2>
       </div>
+
       <section id="featured" style={{ marginTop: "13.5rem" }}>
         <div style={{ color: "var(--pri)", fontSize: "1.25rem", letterSpacing: "1px" }}>
           Featured
@@ -52,16 +57,17 @@ export default function Originals() {
           })}
         </ContentGrid>
       </section>
+
       <section id="movies" style={{ marginTop: "2rem" }}>
         <ContentSlider images={images} title="Movies" />
       </section>
-      <section id="series" className="">
+      <section id="series">
         <ContentSlider images={images} title="Series" />
       </section>
-      <section id="shorts" className="">
+      <section id="shorts">
         <ContentSlider images={images} title="Shorts" />
       </section>
-      <section id="specials" className="">
+      <section id="specials">
         <ContentSlider images={images} title="Specials" />
       </section>
     </div>
