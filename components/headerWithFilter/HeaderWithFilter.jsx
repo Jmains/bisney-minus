@@ -2,6 +2,7 @@ import s from "./HeaderWithFilter.module.css";
 import { ChevronDown } from "../icons";
 import { useState } from "react";
 import Link from "next/link";
+import SearchBar from "../search/SearchBar";
 
 export default function HeaderWithFilter({ title, filterOptions }) {
   const [showFilterOptions, setShowFilterOptions] = useState(false);
