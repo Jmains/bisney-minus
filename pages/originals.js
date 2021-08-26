@@ -5,11 +5,10 @@ import ContentSlider from "../components/contentSlider/ContentSlider";
 const headerWrapper = {
   position: "fixed",
   padding: "1rem calc(3.5vw + 24px)",
-  paddingTop: "72px",
+  paddingTop: "9rem",
   // height: "310px",
   paddingBottom: "3rem",
   margin: "0",
-  marginTop: "4rem",
   top: "0px",
   left: "0px",
   right: "0px",
