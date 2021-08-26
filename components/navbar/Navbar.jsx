@@ -50,12 +50,12 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = throttle(() => {
-      const offset = 5;
+      const offset = 3;
       const { scrollTop } = document.documentElement;
 
       const scrolled = scrollTop > offset;
       setHasScrolled(scrolled);
-    }, 200);
+    }, 300);
 
     handleScroll();
     document.addEventListener("scroll", handleScroll);

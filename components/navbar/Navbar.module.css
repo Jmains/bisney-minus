@@ -9,7 +9,7 @@
   background: transparent;
   padding-left: 1.4rem;
   padding-right: 0.5rem;
-  transition: background 50ms linear;
+  transition: background 100ms linear;
   z-index: 50;
 }
 
