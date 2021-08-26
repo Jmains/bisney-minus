@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: #000;
+  color: rgb(202, 202, 202);
+}
+
+.footer__logo {
+  display: block;
+  padding-top: 1.5rem;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.footer__linksContainer {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  margin-top: 1.5rem;
+}
+
+.footer__linkFlexItem {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+
+.footer__copyright {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  padding-bottom: 2rem;
+}

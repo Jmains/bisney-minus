@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useScreenWidth from "../../utils/useScreenWidth";
+import Footer from "../footer/Footer";
 import Navbar from "../navbar/Navbar";
 import s from "./Layout.module.css";
 export default function Layout({ children }) {
@@ -13,7 +14,7 @@ export default function Layout({ children }) {
           <div className={s.bg__color}></div>
           <Navbar />
           <main className={s.layout}>{children}</main>
-          {/* <Footer/> */}
+          <Footer />
         </>
       ) : (
         <>
@@ -22,7 +23,7 @@ export default function Layout({ children }) {
               <div className={s.bg__color}></div>
               <Navbar />
               <main className={s.layout}>{children}</main>
-              {/* <Footer/> */}
+              <Footer />
             </>
           ) : (
             <>

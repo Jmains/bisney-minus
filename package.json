@@ -12,7 +12,6 @@
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-slick": "^0.28.1",
-    "swiper": "^6.7.5"
+    "react-slick": "^0.28.1"
   }
 }
