@@ -3,7 +3,7 @@ import Head from "next/head";
 import Navbar from "../components/navbar/Navbar";
 import Carousel from "../components/carousel/Carousel";
 import Studios from "../components/studios/Studios";
-import Recommended from "../components/recommended/Recommended";
+import ContentSlider from "../components/contentSlider/ContentSlider";
 import Layout from "../components/layout/layout";
 import useScreenWidth from "../utils/useScreenWidth";
 
@@ -45,20 +45,19 @@ export default function Home() {
       </section>
       <div style={{ marginTop: "2rem" }}>
         <section id="recommended">
-          <Recommended images={images} title="Recommended For You" />
+          <ContentSlider images={images} title="Recommended For You" />
         </section>
       </div>
       <section id="new">
-        <Recommended images={images} title="New to Bisney+" />
+        <ContentSlider images={images} title="New to Bisney+" />
       </section>
       <section id="originals">
-        <Recommended images={images} title="Originals" />
+        <ContentSlider images={images} title="Originals" />
       </section>
       <section id="trending">
-        <Recommended images={images} title="Trending" />
+        <ContentSlider images={images} title="Trending" />
       </section>
       <section id="new"></section>
-      <section id="continueWatching"></section>
     </>
   );
 }
