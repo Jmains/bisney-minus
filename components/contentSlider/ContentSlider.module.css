@@ -1,8 +1,8 @@
-.rec__container {
+.contentSlider__container {
   margin-top: 0.5rem;
 }
 
-.rec__title {
+.contentSlider__title {
   color: var(--pri);
   font-size: 1.25rem;
   letter-spacing: 1px;
@@ -12,11 +12,11 @@
 }
 
 @media only screen and (max-width: 640px) {
-  .rec__container {
+  .contentSlider__container {
     margin-top: 0rem;
   }
 
-  .rec__title {
+  .contentSlider__title {
     font-size: 1rem;
   }
 }
