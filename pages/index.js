@@ -43,7 +43,7 @@ export default function Home() {
       <section id="studios">
         <Studios />
       </section>
-      <div style={{ marginTop: "2rem" }}>
+      <div style={{ marginTop: "1.5rem" }}>
         <section id="recommended">
           <ContentSlider images={images} title="Recommended For You" />
         </section>
