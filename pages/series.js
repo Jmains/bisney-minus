@@ -12,11 +12,25 @@ const filterOptions = [
   "KIDS",
 ];
 
+const headerWrapper = {
+  position: "fixed",
+  padding: "1rem calc(3.5vw + 24px)",
+  paddingTop: "5.5rem",
+  margin: "0",
+  top: "0px",
+  left: "0px",
+  width: "100%",
+  background: "var(--bg)",
+  zIndex: "30",
+};
+
 export default function Series() {
   return (
     <div>
-      <HeaderWithFilter title={"Series"} filterOptions={filterOptions} />
-      <div style={{ marginTop: "6rem" }}>
+      <div style={headerWrapper}>
+        <HeaderWithFilter title={"Series"} filterOptions={filterOptions} />
+      </div>
+      <div style={{ marginTop: "5.5rem" }}>
         <ContentGrid>
           {images.map((img, idx) => {
             return <Card key={idx} img={img} />;

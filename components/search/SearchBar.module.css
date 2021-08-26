@@ -1,0 +1,30 @@
+.search__container {
+  padding-left: 5rem;
+  padding-right: 2rem;
+  background: rgb(75, 78, 90) none repeat scroll 0% 0%;
+  height: 4rem;
+  border-radius: 15px;
+}
+
+.search__input {
+  height: 100%;
+  width: 100%;
+  font-size: calc(1rem + 1vw);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: rgb(224, 224, 224);
+  background: rgb(75, 78, 90) none repeat scroll 0% 0%;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+}
+
+@media only screen and (max-width: 640px) {
+  .search__container {
+    padding-left: 2rem;
+  }
+
+  .search__input {
+    font-size: 1rem;
+  }
+}
