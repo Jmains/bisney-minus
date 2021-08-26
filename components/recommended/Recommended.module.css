@@ -1,5 +1,5 @@
 .rec__container {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 
 .rec__title {
@@ -9,4 +9,14 @@
   font-weight: 400;
   margin: 0;
   padding: 0.5rem 0;
+}
+
+@media only screen and (max-width: 640px) {
+  .rec__container {
+    margin-top: 0rem;
+  }
+
+  .rec__title {
+    font-size: 1rem;
+  }
 }

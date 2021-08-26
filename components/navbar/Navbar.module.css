@@ -1,14 +1,13 @@
 .nav__container {
-  display: flex;
   position: sticky;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  /* right: 0; */
   height: 72px;
-  justify-content: space-between;
   align-items: center;
   background: transparent;
-  padding: 0rem 1.4rem;
+  padding-left: 1.4rem;
   padding-right: 0.5rem;
   transition: background 50ms linear;
   z-index: 50;
@@ -41,21 +40,26 @@
 
 .nav__listContainer {
   display: flex;
+  align-items: center;
+  height: 72px;
 }
 
 .nav__linkContainer {
-  display: block;
+  display: inline-block;
 }
 
 .nav__moreOptionsContainer {
-  display: block;
   position: relative;
+}
+
+.nav__logoLink {
+  padding: 1rem;
 }
 
 .nav__link {
   display: flex;
   align-items: center;
-  padding: 1rem 0.85rem;
+  padding: 1rem 1rem;
   position: relative;
   cursor: pointer;
 }
@@ -63,6 +67,7 @@
 .nav__logo {
   color: var(--pri);
   font-size: 1rem;
+  font-weight: 500;
 }
 
 .nav__linkText {
@@ -100,16 +105,23 @@
   width: 1.25rem;
 }
 
+.nav__profileImgContainer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-left: 0.65rem;
+  padding-right: 1.5rem;
+  padding-top: 0.65rem;
+  cursor: pointer;
+  z-index: 70;
+}
+
 .nav__profileImg {
   height: 3rem;
   width: 3rem;
-  border-radius: 100%;
+  border-radius: 50%;
   object-fit: cover;
   object-position: center;
-}
-
-.nav__profileImgContainer {
-  padding: 0rem 1rem;
 }
 
 .hide {
@@ -177,11 +189,24 @@
 }
 
 @media only screen and (max-width: 640px) {
+  .nav__container {
+    padding: 0 0.8rem;
+  }
+
+  .nav__logoLink {
+    padding: 0.3rem;
+  }
+
+  .nav__profileImgContainer {
+    padding-top: 0.9rem;
+  }
+
   .nav__profileImg {
     height: 2.5rem;
     width: 2.5rem;
-    border-radius: 100%;
-    object-fit: cover;
-    object-position: center;
+  }
+
+  .nav__link {
+    padding: 0.7rem 0.7rem;
   }
 }

@@ -5,6 +5,7 @@ import Carousel from "../components/carousel/Carousel";
 import Studios from "../components/studios/Studios";
 import Recommended from "../components/recommended/Recommended";
 import Layout from "../components/layout/layout";
+import useScreenWidth from "../utils/useScreenWidth";
 
 const images = [
   {
@@ -42,11 +43,19 @@ export default function Home() {
       <section id="studios">
         <Studios />
       </section>
-      <section id="recommended">
-        <Recommended images={images} title="Recommended For You" />
-      </section>
-      <section id="recommended">
+      <div style={{ marginTop: "2rem" }}>
+        <section id="recommended">
+          <Recommended images={images} title="Recommended For You" />
+        </section>
+      </div>
+      <section id="new">
         <Recommended images={images} title="New to Bisney+" />
+      </section>
+      <section id="originals">
+        <Recommended images={images} title="Originals" />
+      </section>
+      <section id="trending">
+        <Recommended images={images} title="Trending" />
       </section>
       <section id="new"></section>
       <section id="continueWatching"></section>

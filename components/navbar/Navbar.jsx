@@ -39,7 +39,7 @@ const navLinks = [
   },
 ];
 
-export default function navbar() {
+export default function Navbar() {
   const smScreenBreakPoint = 1024;
 
   const [showAccountMenu, setShowAccountMenu] = useState(false);
@@ -50,7 +50,7 @@ export default function navbar() {
 
   useEffect(() => {
     const handleScroll = throttle(() => {
-      const offset = 2;
+      const offset = 3;
       const { scrollTop } = document.documentElement;
 
       const scrolled = scrollTop > offset;
@@ -70,12 +70,11 @@ export default function navbar() {
       className={hasScrolled ? `${s.nav__container} ${s.nav__bgColor}` : `${s.nav__container}`}
     >
       <div className={s.nav__listContainer}>
-        <div className={s.nav__link}>
+        <div className={s.nav__logoLink}>
           <Link href="/">
             <a className={s.nav__logo}>Bisney+</a>
           </Link>
         </div>
-
         {/* Nav links */}
         {currentScreenWidth > smScreenBreakPoint ? (
           navLinks.map((link) => {
@@ -97,27 +96,28 @@ export default function navbar() {
           />
         )}
       </div>
-      {/* End Nav links */}
 
+      {/* End Nav links */}
       {/* Avatar and Account Menu */}
       <div
-        onMouseEnter={async () => {
-          await setShowAccountMenu(true);
+        onMouseEnter={() => {
+          setShowAccountMenu(true);
+        }}
+        onClick={() => {
+          console.log("Clikcing");
+          setShowAccountMenu((prev) => !prev);
         }}
         className={s.nav__profileImgContainer}
         aria-haspopup="true"
         aria-expanded={showAccountMenu ? "true" : "false"}
         role="button"
       >
-        {showAccountMenu ? (
-          <AccountMenu setShowAccountMenu={setShowAccountMenu} />
-        ) : (
-          <img
-            className={s.nav__profileImg}
-            src="https://images.unsplash.com/photo-1497551060073-4c5ab6435f12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
-          />
-        )}
+        <img
+          className={s.nav__profileImg}
+          src="https://images.unsplash.com/photo-1497551060073-4c5ab6435f12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
+        />
       </div>
+      <AccountMenu setShowAccountMenu={setShowAccountMenu} showAccountMenu={showAccountMenu} />
       {/* End Avatar and Account Menu */}
     </div>
   );
@@ -150,6 +150,9 @@ const SmallScreenNav = ({ setShowMoreOptions, showMoreOptions }) => {
         <div
           onMouseEnter={() => {
             setShowMoreOptions(true);
+          }}
+          onClick={() => {
+            setShowMoreOptions((prevValue) => !prevValue);
           }}
           role="option"
           tabIndex="0"
