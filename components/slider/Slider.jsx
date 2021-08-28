@@ -55,7 +55,7 @@ const Sliders = ({ images }) => {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 640,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,

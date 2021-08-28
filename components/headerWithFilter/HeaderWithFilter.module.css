@@ -1,0 +1,143 @@
+.header__container {
+}
+
+.header__title {
+  font-size: 3rem;
+  line-height: 1.4;
+  color: var(--pri);
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.header__titleWithFilter {
+  display: flex;
+  position: relative;
+  align-items: baseline;
+}
+
+.header__filterButton {
+  position: relative;
+  bottom: 9px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  margin-left: 2rem;
+  color: white;
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+.header__filterButton:hover {
+  background: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.header__filterButton_active {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.header__filterButtonContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 6rem;
+}
+
+.header__filterArrow {
+  height: 1.1rem;
+  width: 1.1rem;
+}
+
+/* DROPDOWN */
+.dropDownMenu__container {
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  display: block;
+  top: 30px;
+  left: 15px;
+  width: 13rem;
+  margin-left: -1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: rgb(24, 24, 24);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 60;
+
+  transition-property: opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 30ms;
+}
+
+.dropDownMenu__link {
+  display: flex;
+  align-items: center;
+}
+
+.dropDownMenu__link:hover .dropDownMenu__text {
+  color: white;
+  border-left: 1px solid white;
+}
+
+.dropDownMenu__text {
+  color: rgb(187, 187, 187);
+  margin: 0;
+  padding: 0.5em;
+  margin-left: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.dropDownMenu_active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hideFilterDropDownBlock {
+  position: fixed;
+  border: none;
+  margin: 0;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 50;
+  cursor: default;
+  outline: 2px solid transparent;
+}
+
+@media only screen and (max-width: 640px) {
+  .header__filterButtonContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 5rem;
+  }
+
+  .header__title {
+    font-size: 2rem;
+    line-height: 1.4;
+    color: var(--pri);
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .header__filterButton {
+    font-size: 0.75rem;
+  }
+
+  .dropDownMenu__container {
+    width: 10.62rem;
+  }
+
+  .dropDownMenu__text {
+    font-size: 0.65rem;
+  }
+}

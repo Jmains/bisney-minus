@@ -1,0 +1,22 @@
+.contentSlider__container {
+  margin-top: 0.5rem;
+}
+
+.contentSlider__title {
+  color: var(--pri);
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+@media only screen and (max-width: 640px) {
+  .contentSlider__container {
+    margin-top: 0rem;
+  }
+
+  .contentSlider__title {
+    font-size: 1rem;
+  }
+}

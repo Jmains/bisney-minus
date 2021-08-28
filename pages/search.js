@@ -1,25 +1,13 @@
 import Head from "next/head";
-import Card from "../components/card/Card";
 import ContentGrid from "../components/contentGrid/ContentGrid";
+import Card from "../components/card/Card";
 import HeaderWithFilter from "../components/headerWithFilter/HeaderWithFilter";
-
-const filterOptions = [
-  "FEATURED",
-  "ALL MOVIES A-Z",
-  "ACTION/ADVENTURE",
-  "ANIMATION",
-  "COMEDY",
-  "DOCUMENTARY",
-  "DRAMA",
-  "KIDS",
-  "SHORTS",
-  "ULTRA HD AND HDR",
-];
+import SearchBar from "../components/search/SearchBar";
 
 const headerWrapper = {
   position: "fixed",
   padding: "1rem calc(3.5vw + 24px)",
-  paddingTop: "5.5rem",
+  paddingTop: "4.5rem",
   margin: "0",
   top: "0px",
   left: "0px",
@@ -28,16 +16,19 @@ const headerWrapper = {
   zIndex: "30",
 };
 
-export default function Movies() {
+export default function Search() {
   return (
-    <div>
+    <div className="">
       <Head>
-        <title>All Movies | Bisney-</title>
+        <title>Search Movies and Shows | Bisney-</title>
       </Head>
       <div style={headerWrapper}>
-        <HeaderWithFilter title={"Movies"} filterOptions={filterOptions} />
+        <SearchBar />
+        <div style={{ marginTop: "2rem" }}>
+          <HeaderWithFilter title={"Explore"} />
+        </div>
       </div>
-      <div style={{ marginTop: "5.5rem" }}>
+      <div style={{ marginTop: "10.5rem" }}>
         <ContentGrid>
           {images.map((img, idx) => {
             return <Card key={idx} img={img} />;
@@ -58,6 +49,7 @@ const images = [
   {
     url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/A70B621E6AEA078E1CC33D0941B23C3CF64EA6EB0C620BBA1BFABB58663A90A3/badging?width=800&aspectRatio=1.78&format=jpeg&label=originals",
   },
+
   {
     url: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/9FE32EC34EF424786CBC0DE0838A861E66863B79A2E62B66D8409538502657BC/scale?width=800&aspectRatio=1.78&format=jpeg",
   },

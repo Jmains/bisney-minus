@@ -1,16 +1,14 @@
 .nav__container {
-  display: flex;
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   height: 72px;
-  justify-content: space-between;
   align-items: center;
   background: transparent;
-  padding: 0rem 1.4rem;
+  padding-left: 1.4rem;
   padding-right: 0.5rem;
-  transition: background 200ms ease-in;
+  transition: background 100ms linear;
   z-index: 50;
 }
 
@@ -21,8 +19,10 @@
 .nav__container::after {
   content: "";
   position: absolute;
-  inset: 0;
-  height: 170px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0),
@@ -39,21 +39,28 @@
 
 .nav__listContainer {
   display: flex;
+  align-items: center;
+  height: 72px;
+  margin: 0;
+  padding: 0;
 }
 
-.nav__linkContainer {
+.nav_linkContainer {
   display: block;
 }
 
 .nav__moreOptionsContainer {
-  display: block;
   position: relative;
+}
+
+.nav__logoLink {
+  padding: 1rem;
 }
 
 .nav__link {
   display: flex;
   align-items: center;
-  padding: 1rem 0.85rem;
+  padding: 1rem 1.35rem;
   position: relative;
   cursor: pointer;
 }
@@ -61,6 +68,7 @@
 .nav__logo {
   color: var(--pri);
   font-size: 1rem;
+  font-weight: 500;
 }
 
 .nav__linkText {
@@ -79,17 +87,20 @@
   bottom: -8px;
   width: 0%;
   height: 2px;
+  opacity: 0;
   transition: 0.2s ease-out 0.05s;
-  transition-property: width;
+  transition-property: width, opacity;
   background-color: var(--pri);
 }
 
 .nav__linkContainer:hover .nav__linkText::before {
   width: 100%;
+  opacity: 100%;
 }
 
 .dropDownMenu__link:hover .nav__linkText::before {
   width: 100%;
+  opacity: 100%;
 }
 
 .nav__icon {
@@ -98,16 +109,31 @@
   width: 1.25rem;
 }
 
+.nav__profileImgContainer {
+  position: absolute;
+
+  border: none;
+  background: transparent;
+
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  padding-left: 0.65rem;
+  padding-right: 1.5rem;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+
+  cursor: pointer;
+  z-index: 70;
+}
+
 .nav__profileImg {
   height: 3rem;
   width: 3rem;
-  border-radius: 100%;
+  border-radius: 50%;
   object-fit: cover;
   object-position: center;
-}
-
-.nav__profileImgContainer {
-  padding: 0rem 1rem;
 }
 
 .hide {
@@ -175,11 +201,24 @@
 }
 
 @media only screen and (max-width: 640px) {
+  .nav__container {
+    padding: 0 0.8rem;
+  }
+
+  .nav__logoLink {
+    padding: 0.3rem;
+  }
+
+  .nav__profileImgContainer {
+    padding-top: 0.9rem;
+  }
+
   .nav__profileImg {
     height: 2.5rem;
     width: 2.5rem;
-    border-radius: 100%;
-    object-fit: cover;
-    object-position: center;
+  }
+
+  .nav__link {
+    padding: 0.7rem 0.7rem;
   }
 }
