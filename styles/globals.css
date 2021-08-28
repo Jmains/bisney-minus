@@ -12,6 +12,8 @@ body {
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   list-style: none;
   background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
