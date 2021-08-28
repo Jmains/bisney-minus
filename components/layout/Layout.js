@@ -52,6 +52,7 @@ export default function Layout({ children }) {
                     Help
                   </a>
                 </div>
+
                 <button
                   onClick={() => {
                     setViewSmScreenAnyway(true);
@@ -60,6 +61,7 @@ export default function Layout({ children }) {
                 >
                   View app on small screen anyway
                 </button>
+                <p className={s.note}>Note: App is not optimized for small screens</p>
               </div>
             </>
           )}
