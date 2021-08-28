@@ -3,39 +3,9 @@
   margin: 0.5rem 0;
 }
 
-/* SLIDER BUTTON STYLES */
-
-.slider__btn {
-  position: absolute;
-  border: none;
-  width: calc(3.5vw + 24px);
-  opacity: 0;
-  background: transparent;
-  height: 100%;
-  color: white;
-  transition: opacity 200ms ease-in;
-  z-index: 30;
-}
-
-.slider__btn:hover,
-.slider__btn:focus {
-  cursor: pointer;
-  opacity: 1;
-}
-
-.slider__btnLeft {
-  top: 0;
-  left: 0;
-  transform: translateX(-100%);
-}
-
-.slider__btnRight {
-  right: 0;
-  top: 0;
-  transform: translateX(100%);
-}
-
-/* END SLIDER BUTTON STYLES */
+/*************************
+ SLIDER CARD STYLES
+ *************************/
 
 .slider__card {
   position: relative;

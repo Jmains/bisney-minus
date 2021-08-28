@@ -27,6 +27,7 @@ ACCOUNT MENU STYLES
   visibility: hidden;
   z-index: 60;
 }
+
 .slideDownAnim {
   animation: slideDown 400ms ease-in-out;
 }
