@@ -1,30 +1,6 @@
 import s from "./Slider.module.css";
-import { ChevronLeft, ChevronRight } from "../icons";
 import Slider from "react-slick";
-
-const NextSlideBtn = ({ onClick }) => {
-  return (
-    <button
-      onClick={onClick}
-      className={`${s.slider__btn} ${s.slider__btnRight}`}
-      aria-label="Select this to see other featured content"
-    >
-      <ChevronRight style={{ height: "3rem", width: "3rem" }} />
-    </button>
-  );
-};
-
-const PrevSlideBtn = ({ onClick }) => {
-  return (
-    <button
-      onClick={onClick}
-      className={`${s.slider__btn} ${s.slider__btnLeft}`}
-      aria-label="Select this to see other featured content"
-    >
-      <ChevronLeft style={{ height: "3rem", width: "3rem" }} />
-    </button>
-  );
-};
+import { NextSlideBtn, PrevSlideBtn } from "../shared/SliderButtons";
 
 const Sliders = ({ images }) => {
   const settings = {
@@ -62,6 +38,7 @@ const Sliders = ({ images }) => {
         },
       },
     ],
+
     nextArrow: <NextSlideBtn />,
     prevArrow: <PrevSlideBtn />,
   };
@@ -74,7 +51,7 @@ const Sliders = ({ images }) => {
             <a className={`${s.slider__card}`} href="#">
               <div className={s.slider__imgContainer}>
                 <div>
-                  <img className={s.slider__img} src={img.url} alt="" />
+                  <img className={s.slider__img} src={img.url} alt="show/movie name" />
                 </div>
               </div>
             </a>

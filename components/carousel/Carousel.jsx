@@ -1,35 +1,8 @@
-import { useState } from "react";
 import s from "./Carousel.module.css";
-import { ChevronLeft, ChevronRight } from "../icons";
 import Slider from "react-slick";
+import { NextSlideBtn, PrevSlideBtn } from "../shared/SliderButtons";
 
 export default function Carousel() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const NextSlideBtn = ({ onClick }) => {
-    return (
-      <button
-        onClick={onClick}
-        className={`${s.slider__btn} ${s.slider__btnRight}`}
-        aria-label="Select this to see other featured content"
-      >
-        <ChevronRight style={{ height: "3rem", width: "3rem" }} />
-      </button>
-    );
-  };
-
-  const PrevSlideBtn = ({ onClick }) => {
-    return (
-      <button
-        onClick={onClick}
-        className={`${s.slider__btn} ${s.slider__btnLeft}`}
-        aria-label="Select this to see other featured content"
-      >
-        <ChevronLeft style={{ height: "3rem", width: "3rem" }} />
-      </button>
-    );
-  };
-
   const settings = {
     speed: 500,
     dots: true,
@@ -60,9 +33,9 @@ export default function Carousel() {
       {images.map((img, idx) => {
         return (
           <li key={idx}>
-            <a className={`${s.slider__card}`} href="#">
+            <a tabIndex="-1" className={`${s.slider__card}`} href="#">
               <div className={s.slider__imgContainer}>
-                <img className={s.slider__img} src={img.url} alt="" />
+                <img className={s.slider__img} src={img.url} alt="featured shows and movies" />
               </div>
             </a>
           </li>
