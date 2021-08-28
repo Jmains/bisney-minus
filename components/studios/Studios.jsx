@@ -5,7 +5,7 @@ export default function Studios() {
     <div className={s.studios__container}>
       {studios.map((studio, idx) => {
         return (
-          <div key={idx} role="link" className={s.studios__link}>
+          <div tabIndex="0" key={idx} role="link" className={s.studios__link}>
             <img className={s.studios__img} src={studio.imgSrc} alt={studio.imgAlt} />
             <video className={s.studios__video} muted loop autoPlay playsInline>
               <source type="video/mp4" src={studio.videoSrc}></source>

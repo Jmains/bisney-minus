@@ -25,19 +25,15 @@
   height: 100%;
   top: 0;
   left: 0;
-<<<<<<< HEAD
-  bottom: 0;
-  right: 0;
-=======
   right: 0;
   bottom: 0;
->>>>>>> main
   position: absolute;
   object-position: center;
   object-fit: cover;
 }
 
-.studios__link:hover {
+.studios__link:hover,
+.studios__link:focus {
   cursor: pointer;
   transform: scale(1.07);
   border: 2px solid rgba(255, 255, 255, 0.9);
@@ -48,20 +44,16 @@
   opacity: 0;
   top: 0;
   left: 0;
-<<<<<<< HEAD
-  bottom: 0;
-  right: 0;
-=======
   right: 0;
   bottom: 0;
->>>>>>> main
   z-index: -1;
   height: 100%;
   width: 100%;
   transform: scale(1);
 }
 
-.studios__link:hover .studios__video {
+.studios__link:hover .studios__video,
+.studios__link:focus .studios__video {
   opacity: 1;
   transform: scale(1.07);
 }
