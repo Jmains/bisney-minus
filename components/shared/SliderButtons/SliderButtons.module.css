@@ -1,4 +1,6 @@
-/* SLIDER BUTTON STYLES */
+/*************************
+ SLIDER BUTTON STYLES
+ *************************/
 
 .slider__btn {
   position: absolute;
@@ -7,7 +9,7 @@
   opacity: 0;
   background: transparent;
   height: 100%;
-  color: white;
+  color: rgb(230, 230, 230);
   transition: opacity 200ms ease-in;
   z-index: 30;
 }
@@ -30,4 +32,6 @@
   transform: translateX(100%);
 }
 
-/* END SLIDER BUTTON STYLES */
+/*************************
+ END SLIDER BUTTON STYLES
+ *************************/

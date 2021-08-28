@@ -1,3 +1,7 @@
+/*************************
+ HEADER STYLES
+ *************************/
+
 .header__container {
 }
 
@@ -49,7 +53,10 @@
   width: 1.1rem;
 }
 
-/* DROPDOWN */
+/*************************
+ DROPDOWN MENU STYLES
+ *************************/
+
 .dropDownMenu__container {
   visibility: hidden;
   position: absolute;

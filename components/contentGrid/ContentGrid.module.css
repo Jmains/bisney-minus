@@ -1,3 +1,7 @@
+/*************************
+ GRID STYLES
+ *************************/
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(calc(50% - 20px), 1fr));

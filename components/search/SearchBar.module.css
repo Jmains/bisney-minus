@@ -1,9 +1,13 @@
+/*************************
+ SEARCH BAR STYLES
+ *************************/
+
 .search__container {
   padding-left: 5rem;
   padding-right: 2rem;
-  background: rgb(75, 78, 90) none repeat scroll 0% 0%;
+  background: rgb(75, 78, 90);
   height: 4rem;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 .search__input {
@@ -13,10 +17,14 @@
   font-weight: 500;
   letter-spacing: 1.5px;
   color: rgb(224, 224, 224);
-  background: rgb(75, 78, 90) none repeat scroll 0% 0%;
+  background: rgb(75, 78, 90);
   border: none;
   outline: none;
-  border-radius: 15px;
+  border-radius: 5px;
+}
+
+.search__input::placeholder {
+  color: rgb(150, 150, 150);
 }
 
 @media only screen and (max-width: 640px) {
