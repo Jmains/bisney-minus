@@ -66,3 +66,9 @@
   background: tomato;
   cursor: pointer;
 }
+
+.note {
+  text-align: center;
+  color: rgb(252, 0, 0);
+  font-size: 0.9rem;
+}
