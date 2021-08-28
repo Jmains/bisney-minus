@@ -2,22 +2,21 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 0rem 2rem;
-  max-width: 100%;
-  height: 100%;
   margin-top: 2rem;
 }
 
 .studios__link {
   position: relative;
   padding-top: 56.25%;
+  height: 0;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 9px;
   background: linear-gradient(rgb(48, 50, 62), rgb(30, 31, 42));
   border: 3px solid rgba(255, 255, 255, 0.2);
   box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
   transform: scale(1);
   transition-property: transform, border;
-  transition-duration: 300ms;
+  transition-duration: 250ms;
   transition-timing-function: ease-out;
 }
 
@@ -33,7 +32,8 @@
   object-fit: cover;
 }
 
-.studios__link:hover {
+.studios__link:hover,
+.studios__link:focus {
   cursor: pointer;
   transform: scale(1.07);
   border: 2px solid rgba(255, 255, 255, 0.9);
@@ -48,10 +48,18 @@
   bottom: 0;
   z-index: -1;
   height: 100%;
+  width: 100%;
   transform: scale(1);
 }
 
-.studios__link:hover .studios__video {
+.studios__link:hover .studios__video,
+.studios__link:focus .studios__video {
   opacity: 1;
   transform: scale(1.07);
+}
+
+@media screen and (max-width: 768px) {
+  .studios__container {
+    gap: 0rem 0.75rem;
+  }
 }
