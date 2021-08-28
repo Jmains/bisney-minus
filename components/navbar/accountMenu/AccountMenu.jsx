@@ -24,6 +24,8 @@ export default function AccountMenu({ setShowAccountMenu, showAccountMenu }) {
           return (
             <div
               key={idx}
+              aria-label={`${profile.name}'s profile`}
+              tabIndex="0"
               className={
                 showAccountMenu
                   ? `${s.accMenu__userProfilesContainer} ${s.expandedFadeIn}`
